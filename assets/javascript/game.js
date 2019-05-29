@@ -71,6 +71,8 @@ $(document).on('click', ".crystal", function() {
 
         // Display current wins.
         $("#wins").html("Wins: " + wins);
+
+        // Set previous to 0 so it can incriment by 1
         previous = 0;
 
         // And alert player of win
