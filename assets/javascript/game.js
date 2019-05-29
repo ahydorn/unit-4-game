@@ -68,15 +68,3 @@ $(document).on('click', ".crystal", function() {
     };
 
 });
-
-
-/*==============================*/
-/*    Pseudo-code fragments     */
-/*==============================*/
-
-
-//  The player wins if their score matches the randomly selected target number
-
-// The player triggers a loss when their score > than the randomly selected target number
-
-// The game shows the number of wins and losses
