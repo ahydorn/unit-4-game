@@ -1,5 +1,5 @@
 /*==============*/
-/*    Varbox    */
+/*  Global Vars */
 /*==============*/
 
 var target;
@@ -8,8 +8,8 @@ var wins = 0;
 var previous = 0;
 
 var newRound = function() {
-    //  Dump assigned crystal numbers
 
+    //  Dump assigned crystal numbers
     $(".crystals").empty();
 
     // Reset "Current score:" value to 0 instead of keeping it until the next click.
@@ -37,6 +37,7 @@ newRound();
 //  When the player clicks on a crystal, it will add a specific amount of points to the players score
 $(document).on('click', ".crystal", function() {
 
+    // Run this function and spit out data-random as an integer--not a string
     var num = parseInt($(this).attr('data-random'));
 
     // Incriment running score by value of last clicked crystal
@@ -48,6 +49,7 @@ $(document).on('click', ".crystal", function() {
 
     // If running score > target score...
     if (previous > randomTarget) {
+
         // Incriment losses counter by 1
         losses++;
 
@@ -63,6 +65,7 @@ $(document).on('click', ".crystal", function() {
 
         // If player running score == target score exactly...
     } else if (previous === randomTarget) {
+
         // Incriment wins counter by 1
         wins++;
 
