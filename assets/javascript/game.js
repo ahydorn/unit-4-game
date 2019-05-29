@@ -30,10 +30,8 @@ var newRound = function() {
 
 newRound();
 
-var reset = function() {}
-
 //  When the player clicks on a crystal, it will add a specific amount of points to the players score
-$(document).on('click', function() {
+$(document).on('click', ".crystal", function() {
     var num = parseInt($(this).attr('data-random'));
 
     // Incriment running score by value of last clicked crystal
@@ -42,23 +40,31 @@ $(document).on('click', function() {
     if (previous > randomTarget) {
         // Incriment losses counter by 1
         losses++;
-        $("#losses").html("Losses: " + losses);
 
+        // Display current losses
+        $("#losses").html("Losses: " + losses);
         previous = 0;
 
         // And alert player of loss
         alert("You lost!!");
 
+        // Run function to reload everything
+        newRound();
+
         // If player running score == target score exactly...
     } else if (previous === randomTarget) {
         // Incriment wins counter by 1
         wins++;
-        $("#wins").html("Wins: " + wins);
 
+        // Display current wins.
+        $("#wins").html("Wins: " + wins);
         previous = 0;
 
         // And alert player of win
         alert("You won!!");
+
+        // Run function to reload everything
+        newRound();
     };
 
 });
